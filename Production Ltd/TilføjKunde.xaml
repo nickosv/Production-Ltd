@@ -3,11 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="TilføjKunde" Height="341.6" Width="300">
     <Grid>
-        <TextBox Name="kundenNavn" HorizontalAlignment="Left" Height="23" Margin="10,41,0,0" TextWrapping="Wrap" Text="Kundens navn" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="kundeAdresse" HorizontalAlignment="Left" Height="23" Margin="10,81,0,0" TextWrapping="Wrap" Text="Kundens adresse" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="telefonnummer" HorizontalAlignment="Left" Height="23" Margin="10,120,0,0" TextWrapping="Wrap" Text="Telefonnummer" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="kundeType" HorizontalAlignment="Left" Height="23" Margin="10,160,0,0" TextWrapping="Wrap" Text="Kundetype" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="kundenNavn" HorizontalAlignment="Left" Height="23" Margin="10,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="kundeAdresse" HorizontalAlignment="Left" Height="23" Margin="10,81,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="telefonnummer" HorizontalAlignment="Left" Height="23" Margin="10,120,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="kundeType" HorizontalAlignment="Left" Height="23" Margin="10,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Button Content="Tilføj kunde" HorizontalAlignment="Left" Margin="29,225,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label Content="Kundens navn" HorizontalAlignment="Left" Margin="135,41,0,0" VerticalAlignment="Top"/>
+        <Label Content="Kundens adresse" HorizontalAlignment="Left" Margin="135,81,0,0" VerticalAlignment="Top"/>
+        <Label Content="Telefonnummer" HorizontalAlignment="Left" Margin="135,120,0,0" VerticalAlignment="Top"/>
+        <Label Content="Kundetype" HorizontalAlignment="Left" Margin="135,160,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
