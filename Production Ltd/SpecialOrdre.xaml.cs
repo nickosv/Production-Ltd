@@ -23,5 +23,10 @@ namespace Production_Ltd
         {
             InitializeComponent();
         }
+
+        private void annuller_click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
