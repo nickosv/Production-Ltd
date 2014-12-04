@@ -23,5 +23,11 @@ namespace Production_Ltd
         {
             InitializeComponent();
         }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Controller controller = new Controller();
+            controller.hentKunder();
+        }
     }
 }
