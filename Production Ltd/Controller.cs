@@ -48,5 +48,44 @@ namespace Production_Ltd
                 SqlConnection.Dispose();
             }
         }
+        public void TilføjOrdre(int inputAntal, string inputProdukttype, DateTime inputLeveringsdato, string inputKunde)
+        {
+            Tilføj_Ordre tilføjordre = new Tilføj_Ordre();
+
+            SqlConnection SqlConnection = new SqlConnection(
+                "Server=ealdb1.eal.local;" +
+                "Database=EJL06_DB;" +
+                "User Id=ejl06_usr;" +
+                "Password=Baz1nga6;");
+
+            try
+            {
+                SqlCommand TilføjOrdre = new SqlCommand("opretKunde", SqlConnection);
+                TilføjOrdre.CommandType = CommandType.StoredProcedure;
+
+                TilføjOrdre.Parameters.Add(new SqlParameter("@Antal", inputAntal));
+
+                TilføjOrdre.Parameters.Add(new SqlParameter("@Produkttype", inputProdukttype));
+
+                TilføjOrdre.Parameters.Add(new SqlParameter("@Leveringsdato", inputLeveringsdato));
+
+                TilføjOrdre.Parameters.Add(new SqlParameter("@Kunde", inputKunde));
+
+                SqlConnection.Open();
+                TilføjOrdre.ExecuteNonQuery();
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine("\n<Press Enter to go back to menu>");
+                Console.ReadKey();
+            }
+            finally
+            {
+                SqlConnection.Close();
+                SqlConnection.Dispose();
+            }
+        }
     }
+        
 }
