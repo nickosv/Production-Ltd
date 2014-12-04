@@ -50,7 +50,7 @@ namespace Production_Ltd
         }
         public void TilføjOrdre(int inputAntal, string inputProdukttype, DateTime inputLeveringsdato, string inputKunde)
         {
-            Tilføj_Ordre tilføjordre = new Tilføj_Ordre();
+            TilføjOrdre tilføjordre = new TilføjOrdre();
 
             SqlConnection SqlConnection = new SqlConnection(
                 "Server=ealdb1.eal.local;" +
@@ -60,7 +60,7 @@ namespace Production_Ltd
 
             try
             {
-                SqlCommand TilføjOrdre = new SqlCommand("opretKunde", SqlConnection);
+                SqlCommand TilføjOrdre = new SqlCommand("opretOrdre", SqlConnection);
                 TilføjOrdre.CommandType = CommandType.StoredProcedure;
 
                 TilføjOrdre.Parameters.Add(new SqlParameter("@Antal", inputAntal));
