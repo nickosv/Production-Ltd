@@ -29,5 +29,10 @@ namespace Production_Ltd
         {
             new TilføjKunde().Show();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            new TilføjKunde().Show();
+        }
     }
 }

@@ -10,8 +10,10 @@ namespace Production_Ltd
 {
     class Controller
     {
-        static void TilføjKunde()
+        public void TilføjKunde(string inputNavn, string inputAdresse, int inputTelefonnummer, string inputKundeType)
         {
+            TilføjKunde tilføjkunde = new TilføjKunde();
+            
             SqlConnection SqlConnection = new SqlConnection(
                 "Server=ealdb1.eal.local;" +
                 "Database=EJL06_DB;" +
@@ -23,15 +25,16 @@ namespace Production_Ltd
                 SqlCommand TilføjKunde = new SqlCommand("opretKunde", SqlConnection);
                 TilføjKunde.CommandType = CommandType.StoredProcedure;
 
-                TilføjKunde.Parameters.Add(new SqlParameter("@AddressLine1", Console.ReadLine()));
+                TilføjKunde.Parameters.Add(new SqlParameter("@Navn", inputNavn));
 
+                TilføjKunde.Parameters.Add(new SqlParameter("@Adresse", inputAdresse));
 
+                TilføjKunde.Parameters.Add(new SqlParameter("@Telefonnummer", inputTelefonnummer));
+
+                TilføjKunde.Parameters.Add(new SqlParameter("@Kundetype", inputKundeType));
 
                 SqlConnection.Open();
                 TilføjKunde.ExecuteNonQuery();
-                Console.WriteLine("Added successfully");
-                Console.WriteLine("\n<Press Enter to go back to menu>");
-                Console.ReadKey();
             }
             catch (SqlException e)
             {

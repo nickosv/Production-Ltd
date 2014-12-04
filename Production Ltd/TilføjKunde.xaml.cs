@@ -23,5 +23,12 @@ namespace Production_Ltd
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Controller controller = new Controller();
+
+            controller.TilføjKunde(kundenNavn.Text, kundeAdresse.Text, int.Parse(telefonnummer.Text), kundeType.Text);
+        }
     }
 }
