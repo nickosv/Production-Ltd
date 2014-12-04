@@ -13,7 +13,7 @@ namespace Production_Ltd
         public void TilføjKunde(string inputNavn, string inputAdresse, int inputTelefonnummer, string inputKundeType)
         {
             TilføjKunde tilføjkunde = new TilføjKunde();
-            
+
             SqlConnection SqlConnection = new SqlConnection(
                 "Server=ealdb1.eal.local;" +
                 "Database=EJL06_DB;" +
@@ -86,6 +86,46 @@ namespace Production_Ltd
                 SqlConnection.Dispose();
             }
         }
+        public List<string> hentKunder()
+        {
+            List<string> returnlistKunder = new List<string>();
+            TilføjOrdre _tilføjOrdre = new TilføjOrdre();
+
+            SqlConnection SqlConnection = new SqlConnection(
+                "Server=ealdb1.eal.local;" +
+                "Database=EJL06_DB;" +
+                "User Id=ejl06_usr;" +
+                "Password=Baz1nga6;");
+
+            try
+            {
+                SqlConnection.Open();
+
+                SqlCommand cmd = new SqlCommand("findKundeNavn", SqlConnection);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader sdr = cmd.ExecuteReader();
+
+                while (sdr.Read())
+                {
+                    string kundeNavn = ("" + sdr["Navn"]);
+                    returnlistKunder.Add(kundeNavn);
+                }
+            }
+            catch (SqlException)
+            {
+                
+            }
+            finally
+            {
+                SqlConnection.Close();
+                SqlConnection.Dispose();
+            }
+
+            return returnlistKunder;
+        }
     }
-        
 }
+    
+        
+

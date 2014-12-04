@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace Production_Ltd
 {
@@ -24,13 +26,23 @@ namespace Production_Ltd
             public TilføjOrdre()
             {
                 InitializeComponent();
+
             }
 
-            private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+            private void vælgKunde_DropDownOpened(object sender, EventArgs e)
             {
                 Controller controller = new Controller();
-                //controller.hentKunder();
+                controller.hentKunder();
+
+                foreach (string kundeNavn in controller.hentKunder())
+                {
+                    vælgKunde.Items.Add(kundeNavn);
+                }
             }
-        
+
+            private void vælgKunde_SelectionChanged(object sender, SelectionChangedEventArgs e)
+            {
+
+            }
     }
 }

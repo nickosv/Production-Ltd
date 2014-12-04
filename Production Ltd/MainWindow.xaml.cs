@@ -32,7 +32,7 @@ namespace Production_Ltd
 
         private void tilføjOrdre(object sender, RoutedEventArgs e)
         {
-            new Tilføj
+            new TilføjOrdre().Show();
         }
 
         
