@@ -10,31 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Production_Ltd
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for SpecialOrdre.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SpecialOrdre : Window
     {
-        public MainWindow()
+        public SpecialOrdre()
         {
             InitializeComponent();
         }
-
-        private void tilføjKunde(object sender, RoutedEventArgs e)
-        {
-            new TilføjKunde().Show();
-        }
-
-        private void tilføjOrdre(object sender, RoutedEventArgs e)
-        {
-            new TilføjOrdre().Show();
-        }
-
-        
     }
 }

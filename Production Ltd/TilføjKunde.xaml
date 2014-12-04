@@ -12,6 +12,7 @@
         <Label Content="Kundens adresse" HorizontalAlignment="Left" Margin="135,81,0,0" VerticalAlignment="Top"/>
         <Label Content="Telefonnummer" HorizontalAlignment="Left" Margin="135,120,0,0" VerticalAlignment="Top"/>
         <Label Content="Kundetype" HorizontalAlignment="Left" Margin="135,160,0,0" VerticalAlignment="Top"/>
+        <Label Content="Tilføj kunde" HorizontalAlignment="Left" Margin="10,2,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="18"/>
 
     </Grid>
 </Window>

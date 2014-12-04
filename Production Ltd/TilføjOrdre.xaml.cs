@@ -31,6 +31,7 @@ namespace Production_Ltd
                 Controller controller = new Controller();
                 //controller.hentKunder();
             }
+            
         
     }
 }
