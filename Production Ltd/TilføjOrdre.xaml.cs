@@ -36,11 +36,20 @@ namespace Production_Ltd
 
                 foreach (string kundeNavn in controller.hentKunder())
                 {
-                    vælgKunde.Items.Add(kundeNavn);
+                    if (!vælgKunde.Items.Contains(kundeNavn))
+                    {
+                        vælgKunde.Items.Add(kundeNavn);
+                    }
+                        
                 }
             }
 
             private void vælgKunde_SelectionChanged(object sender, SelectionChangedEventArgs e)
+            {
+
+            }
+
+            private void vælgStandard_SelectionChanged(object sender, SelectionChangedEventArgs e)
             {
 
             }
