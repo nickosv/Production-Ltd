@@ -28,7 +28,10 @@ namespace Production_Ltd
         {
             Controller controller = new Controller();
 
-            controller.TilføjKunde(kundenNavn.Text, kundeAdresse.Text, int.Parse(telefonnummer.Text), kundeType.Text);
+            controller.TilføjKunde( kundenNavn.Text, 
+                                    kundeAdresse.Text, 
+                                    int.Parse(telefonnummer.Text), 
+                                    kundeType.Text);
         }
     }
 }
