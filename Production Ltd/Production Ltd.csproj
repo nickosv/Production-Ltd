@@ -57,6 +57,9 @@
     <Compile Include="TilføjKunde.xaml.cs">
       <DependentUpon>TilføjKunde.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TilføjOrdre.xaml.cs">
+      <DependentUpon>TilføjOrdre.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -70,6 +73,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="TilføjKunde.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TilføjOrdre.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

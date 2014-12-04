@@ -19,15 +19,18 @@ namespace Production_Ltd
     /// </summary>
     public partial class TilføjOrdre : Window
     {
-        public TilføjOrdre()
-        {
-            InitializeComponent();
-        }
+        
+        
+            public TilføjOrdre()
+            {
+                InitializeComponent();
+            }
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            Controller controller = new Controller();
-            controller.hentKunder();
-        }
+            private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+            {
+                Controller controller = new Controller();
+                //controller.hentKunder();
+            }
+        
     }
 }
