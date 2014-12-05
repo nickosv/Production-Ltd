@@ -49,7 +49,17 @@ namespace Production_Ltd
 
             }
 
+            private void vælgStandard_SelectionChanged(object sender, SelectionChangedEventArgs e)
+            {
+
+            }
+
             private void annuller_Click(object sender, RoutedEventArgs e)
+            {
+
+            }
+
+            private void Button_Click(object sender, RoutedEventArgs e)
             {
 
             }
