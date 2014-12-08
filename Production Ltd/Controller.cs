@@ -86,6 +86,44 @@ namespace Production_Ltd
                 SqlConnection.Dispose();
             }
         }
+        public List<string> hentProcesser()
+        {
+            List<string> returnlistProcesser = new List<string>();
+            TilføjOrdre _tilføjOrdre = new TilføjOrdre();
+
+            SqlConnection SqlConnection = new SqlConnection(
+                "Server=ealdb1.eal.local;" +
+                "Database=EJL06_DB;" +
+                "User Id=ejl06_usr;" +
+                "Password=Baz1nga6;");
+
+            try
+            {
+                SqlConnection.Open();
+
+                SqlCommand cmd = new SqlCommand("findProcesNavn", SqlConnection);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader sdr = cmd.ExecuteReader();
+
+                while (sdr.Read())
+                {
+                    string procesNavn = ("" + sdr["ProcesNavn"]);
+                    returnlistProcesser.Add(procesNavn);
+                }
+            }
+            catch (SqlException)
+            {
+
+            }
+            finally
+            {
+                SqlConnection.Close();
+                SqlConnection.Dispose();
+            }
+
+            return returnlistProcesser;
+        }
         public List<string> hentKunder()
         {
             List<string> returnlistKunder = new List<string>();
@@ -114,7 +152,7 @@ namespace Production_Ltd
             }
             catch (SqlException)
             {
-                
+
             }
             finally
             {
@@ -123,6 +161,46 @@ namespace Production_Ltd
             }
 
             return returnlistKunder;
+
+        }
+        public List<string> hentStandard()
+        {
+            List<string> returnlistStandard = new List<string>();
+            TilføjOrdre _tilføjOrdre = new TilføjOrdre();
+
+            SqlConnection SqlConnection = new SqlConnection(
+                "Server=ealdb1.eal.local;" +
+                "Database=EJL06_DB;" +
+                "User Id=ejl06_usr;" +
+                "Password=Baz1nga6;");
+
+            try
+            {
+                SqlConnection.Open();
+
+                SqlCommand cmd = new SqlCommand("findStandard", SqlConnection);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader sdr = cmd.ExecuteReader();
+
+                while (sdr.Read())
+                {
+                    string Titel = ("" + sdr["Titel"]);
+                    returnlistStandard.Add(Titel);
+                }
+            }
+            catch (SqlException)
+            {
+
+            }
+            finally
+            {
+                SqlConnection.Close();
+                SqlConnection.Dispose();
+            }
+
+            return returnlistStandard;
+
         }
     }
 }

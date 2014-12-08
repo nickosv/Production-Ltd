@@ -46,13 +46,13 @@ namespace Production_Ltd
             private void vælgStandard_DropDownOpened(object sender, EventArgs e)
             {
                 Controller controller = new Controller();
-                controller.hentKunder();
+                controller.hentStandard();
 
-                foreach (string kundeNavn in controller.hentKunder())
+                foreach (string Titel in controller.hentStandard())
                 {
-                    if (!vælgKunde.Items.Contains(kundeNavn))
+                    if (!vælgStandard.Items.Contains(Titel))
                     {
-                        vælgKunde.Items.Add(kundeNavn);
+                        vælgStandard.Items.Add(Titel);
                     }
 
                 }
