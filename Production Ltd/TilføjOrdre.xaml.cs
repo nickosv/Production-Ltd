@@ -92,6 +92,7 @@ namespace Production_Ltd
                                         vælgStandard.Text,
                                         Convert.ToDateTime(leveringsDato.Text),
                                         vælgKunde.Text);
+                Close();
             }
     }
 }
