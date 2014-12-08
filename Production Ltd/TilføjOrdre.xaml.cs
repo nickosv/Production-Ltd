@@ -80,5 +80,18 @@ namespace Production_Ltd
                 this.Close();
                 new SpecialOrdre().Show();
             }
+
+            /*
+            HERRRRRRRRRRRRRRRRRRR
+             * private void TilføjOrdre_Click(object sender, RoutedEventArgs e)
+            {
+                DateTime leveringsDato = new DateTime
+                Controller controller = new Controller();                
+
+                controller.TilføjOrdre(int.Parse(antal.Text),
+                                        vælgStandard.Text,
+                                        leveringsDato.ToString.Text,
+                                        vælgKunde.Text);
+            }*/
     }
 }
