@@ -18,7 +18,7 @@ namespace Production_Ltd
                 "Server=ealdb1.eal.local;" +
                 "Database=EJL06_DB;" +
                 "User Id=ejl06_usr;" +
-                "Password=Baz1nga6;");
+                "Password=Baz1nga;");
 
             try
             {
@@ -38,9 +38,8 @@ namespace Production_Ltd
             }
             catch (SqlException e)
             {
-                Console.WriteLine(e.Message);
-                Console.WriteLine("\n<Press Enter to go back to menu>");
-                Console.ReadKey();
+                string ErrorToMessage = e.Message;
+                System.Windows.MessageBox.Show(ErrorToMessage);
             }
             finally
             {
