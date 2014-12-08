@@ -36,6 +36,25 @@ namespace Production_Ltd
         {
             this.Close();
         }
+
+        private void liste1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Controller controller = new Controller();
+            controller.hentOrdre();
+
+            foreach (string ordre in controller.hentOrdre())
+            {
+                
+                if (!liste1.Items.Contains(ordre))
+                {
+                    liste1.Items.Add(ordre);
+                }
+
+            }
+        }
+
+        
+        
         
     }
 }

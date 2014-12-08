@@ -201,6 +201,45 @@ namespace Production_Ltd
             return returnlistStandard;
 
         }
+        public List<string> hentOrdre()
+        {
+            List<string> returnlistOrdre = new List<string>();
+            TilføjOrdre _tilføjOrdre = new TilføjOrdre();
+
+            SqlConnection SqlConnection = new SqlConnection(
+                "Server=ealdb1.eal.local;" +
+                "Database=EJL06_DB;" +
+                "User Id=ejl06_usr;" +
+                "Password=Baz1nga6;");
+
+            try
+            {
+                SqlConnection.Open();
+
+                SqlCommand cmd = new SqlCommand("findOrdre", SqlConnection);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader sdr = cmd.ExecuteReader();
+
+                while (sdr.Read())
+                {
+                    string ordre = ("" + sdr["Ordrenummer"]);
+                    returnlistOrdre.Add(ordre);
+                }
+            }
+            catch (SqlException)
+            {
+
+            }
+            finally
+            {
+                SqlConnection.Close();
+                SqlConnection.Dispose();
+            }
+
+            return returnlistOrdre;
+
+        }
     }
 }
     

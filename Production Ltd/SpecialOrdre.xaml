@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="SpecialOrdre" Height="350" Width="320">
     <Grid>
-        <ComboBox Name="vælgKunde" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox Name="vælgKunde" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="vælgKunde_SelectionChanged" DropDownOpened="vælgKunde_DropDownOpened"/>
         <Label Content="Vælg kunde" HorizontalAlignment="Left" Margin="130,38,0,0" VerticalAlignment="Top"/>
         <Button Content="Tilføj ordre" HorizontalAlignment="Left" Margin="184,271,0,0" VerticalAlignment="Top" Width="75"/>
         <Button Content="Annuller" HorizontalAlignment="Left" Margin="47,272,0,0" VerticalAlignment="Top" Width="75" Click="annuller_click"/>

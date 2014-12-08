@@ -28,5 +28,28 @@ namespace Production_Ltd
         {
             this.Close();
         }
+
+        private void vælgKunde_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void vælgKunde_DropDownOpened(object sender, EventArgs e)
+        {
+            Controller controller = new Controller();
+            controller.hentKunder();
+
+            foreach (string kundeNavn in controller.hentKunder())
+            {
+                if (!vælgKunde.Items.Contains(kundeNavn))
+                {
+                    vælgKunde.Items.Add(kundeNavn);
+                }
+            }
+        }
+
+       
+
+       
     }
 }
