@@ -43,6 +43,22 @@ namespace Production_Ltd
                         
             }
             }
+            private void vælgStandard_DropDownOpened(object sender, EventArgs e)
+            {
+                Controller controller = new Controller();
+                controller.hentKunder();
+
+                foreach (string kundeNavn in controller.hentKunder())
+                {
+                    if (!vælgKunde.Items.Contains(kundeNavn))
+                    {
+                        vælgKunde.Items.Add(kundeNavn);
+                    }
+
+                }
+            }
+
+
 
             private void vælgKunde_SelectionChanged(object sender, SelectionChangedEventArgs e)
             {
@@ -56,7 +72,7 @@ namespace Production_Ltd
 
             private void annuller_Click(object sender, RoutedEventArgs e)
             {
-
+            this.Close();
             }
 
             private void Button_Click(object sender, RoutedEventArgs e)
