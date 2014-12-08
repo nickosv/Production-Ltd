@@ -77,6 +77,7 @@ namespace Production_Ltd
 
             private void specialordre_Click(object sender, RoutedEventArgs e)
             {
+                this.Close();
                 new SpecialOrdre().Show();
             }
     }
