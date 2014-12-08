@@ -18,7 +18,7 @@ namespace Production_Ltd
                 "Server=ealdb1.eal.local;" +
                 "Database=EJL06_DB;" +
                 "User Id=ejl06_usr;" +
-                "Password=Baz1nga;");
+                "Password=Baz1nga6;");
 
             try
             {
