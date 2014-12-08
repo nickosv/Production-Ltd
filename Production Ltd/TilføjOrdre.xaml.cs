@@ -75,9 +75,9 @@ namespace Production_Ltd
             this.Close();
             }
 
-            private void Button_Click(object sender, RoutedEventArgs e)
+            private void specialordre_Click(object sender, RoutedEventArgs e)
             {
-
+                new SpecialOrdre().Show();
             }
     }
 }
