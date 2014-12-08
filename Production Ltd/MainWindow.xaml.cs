@@ -35,6 +35,11 @@ namespace Production_Ltd
             new TilføjOrdre().Show();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            new GenererArbplan().Show();
+        }
+
         
     }
 }
