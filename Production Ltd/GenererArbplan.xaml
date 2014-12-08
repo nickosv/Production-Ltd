@@ -27,7 +27,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Name="backbutton" Content="Tilbage" HorizontalAlignment="Left" Margin="314,518,0,0" VerticalAlignment="Top" Width="76"/>
+        <Button Name="backbutton" Content="Tilbage" HorizontalAlignment="Left" Margin="314,518,0,0" VerticalAlignment="Top" Width="76" Click="backbutton_Click"/>
         <Button Name="savebutton" Content="Gem" HorizontalAlignment="Left" Margin="187,518,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>

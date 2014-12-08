@@ -31,6 +31,11 @@ namespace Production_Ltd
             //produkttype
             //prioriteringsnummer
         }
+
+        private void backbutton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
         
     }
 }
