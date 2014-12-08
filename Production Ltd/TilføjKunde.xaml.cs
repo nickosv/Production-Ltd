@@ -24,7 +24,7 @@ namespace Production_Ltd
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             Controller controller = new Controller();
 
@@ -33,5 +33,7 @@ namespace Production_Ltd
                                     int.Parse(telefonnummer.Text), 
                                     kundeType.Text);
         }
+
+        
     }
 }
