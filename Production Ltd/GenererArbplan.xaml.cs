@@ -10,36 +10,32 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Production_Ltd
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for GenererArbplan.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class GenererArbplan : Window
     {
-        public MainWindow()
+        public GenererArbplan()
         {
             InitializeComponent();
+
+            //tilføj knap
+            //ordreID
+            //Deadline
+            //antal
+            //kunde
+            //produkttype
+            //prioriteringsnummer
         }
 
-        private void tilføjKunde(object sender, RoutedEventArgs e)
+        private void backbutton_Click(object sender, RoutedEventArgs e)
         {
-            new TilføjKunde().Show();
+            this.Close();
         }
-
-        private void tilføjOrdre(object sender, RoutedEventArgs e)
-        {
-            new TilføjOrdre().Show();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            new GenererArbplan().Show();
-        }
-
         
     }
 }
