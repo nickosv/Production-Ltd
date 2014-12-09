@@ -240,6 +240,13 @@ namespace Production_Ltd
             return returnlistOrdre;
 
         }
+        public void regneMetode()
+        {
+            if (true)
+            {
+                
+            }
+        }
     }
 }
     
