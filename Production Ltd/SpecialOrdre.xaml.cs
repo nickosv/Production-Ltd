@@ -48,6 +48,62 @@ namespace Production_Ltd
             }
         }
 
+        private void beregnTid_Click(object sender, RoutedEventArgs e)
+        {
+            int beregnetTid = 0;
+
+            if (stansemaskine.IsChecked.Value == true)
+            {
+                beregnetTid = beregnetTid + 5;
+            }
+            if (svejsning.IsChecked.Value == true)
+            {
+                beregnetTid = beregnetTid + 10;
+            }
+            if (bukkemaskine.IsChecked.Value == true)
+            {
+                beregnetTid = beregnetTid + 10;
+            }
+            if (laserCutter.IsChecked.Value == true)
+            {
+                beregnetTid = beregnetTid + 5;
+            }
+            if (cncFræser.IsChecked.Value == true)
+            {
+                beregnetTid = beregnetTid + 9;
+            }
+            if (maskinsaks.IsChecked.Value == true)
+            {
+                beregnetTid = beregnetTid + 8;
+            }
+            if (montering.IsChecked.Value == true)
+            {
+                beregnetTid = beregnetTid + 5;
+            }
+
+            MessageBox.Show("Estimeret tid: " + (beregnetTid * int.Parse(antal.Text)) / 60 + " timer");
+        }
+
+        private void tilføjOrdre_Click(object sender, RoutedEventArgs e)
+        {
+            Controller controller = new Controller();
+
+            controller.TilføjSpecialOrdre(vælgKunde.Text,
+                                            int.Parse(antal.Text),
+                                            Convert.ToDateTime(leveringsDato.Text),
+                                            stansemaskine.IsChecked.Value,
+                                            svejsning.IsChecked.Value,
+                                            bukkemaskine.IsChecked.Value,
+                                            montering.IsChecked.Value,
+                                            laserCutter.IsChecked.Value,
+                                            cncFræser.IsChecked.Value,
+                                            maskinsaks.IsChecked.Value);
+            MessageBox.Show("Ordre tilføjet");
+            Close();
+        }
+
+
+
        
 
        
