@@ -28,10 +28,21 @@ namespace Production_Ltd
         {
             Controller controller = new Controller();
 
-            controller.TilføjKunde( kundenNavn.Text, 
-                                    kundeAdresse.Text, 
-                                    int.Parse(telefonnummer.Text), 
+            if (kundenNavn.Text == "" || kundeAdresse.Text == "" || telefonnummer.Text == "" || kundeType.Text == "") 
+            {
+                MessageBox.Show("Alle felterne skal udfyldes.");
+            }
+            else if (telefonnummer.Text.Count() != 8)
+            {
+                MessageBox.Show("Telenummeret skal bestå af 8 cifre.");
+            }
+            else
+            {
+                controller.TilføjKunde(kundenNavn.Text,
+                                    kundeAdresse.Text,
+                                    int.Parse(telefonnummer.Text),
                                     kundeType.Text);
+            }            
         }
 
         
