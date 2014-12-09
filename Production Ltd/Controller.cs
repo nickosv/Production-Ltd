@@ -247,6 +247,26 @@ namespace Production_Ltd
                 
             }
         }
+        public string HentOrdreID()
+        {
+            return "testordreid";
+        }
+        public string HentDeadline()
+        {
+            return "testdeadline";
+        }
+        public string HentAntal()
+        {
+            return "testantal";
+        }
+        public string HentKunde()
+        {
+            return "testkunde";
+        }
+        public string HentProdukttype()
+        {
+            return "testprodukttype";
+        }
     }
 }
     

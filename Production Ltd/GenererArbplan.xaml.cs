@@ -1,60 +1,44 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using System.Collections.ObjectModel;
 
 namespace Production_Ltd
 {
-    /// <summary>
-    /// Interaction logic for GenererArbplan.xaml
-    /// </summary>
     public partial class GenererArbplan : Window
-    {
+    {   
+        Controller controller = new Controller();
+        ObservableCollection<_listeInfo> _listeInfo2 = new ObservableCollection<_listeInfo>();
+
         public GenererArbplan()
         {
+            string hentetOrdreId = controller.HentOrdreID();
+            string hentetDeadline = controller.HentDeadline();
+            string hentetAntal = controller.HentAntal();
+            string hentetKunde = controller.HentKunde();
+            string hentetProdukttype = controller.HentProdukttype();
+            _listeInfo2.Add(new _listeInfo { OrdreID = hentetOrdreId, Deadline = hentetDeadline, Antal = hentetAntal, Kunde = hentetKunde, Produkttype = hentetProdukttype });
+
             InitializeComponent();
-
-            //tilføj knap
-            //ordreID
-            //Deadline
-            //antal
-            //kunde
-            //produkttype
-            //prioriteringsnummer
         }
 
-        private void backbutton_Click(object sender, RoutedEventArgs e)
+        public ObservableCollection<_listeInfo> listeInfo
+        { get { return _listeInfo2; } }
+
+        private void AddRow_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            _listeInfo2.Add(new _listeInfo { OrdreID = "A New Game", Deadline = "A New Creator", Antal = "A New Publisher" });
         }
+    }
 
-        private void liste1_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            Controller controller = new Controller();
-            controller.hentOrdre();
-
-            foreach (string ordre in controller.hentOrdre())
-            {
-                
-                if (!liste1.Items.Contains(ordre))
-                {
-                    liste1.Items.Add(ordre);
-                }
-
-            }
-        }
-
-        
-        
+    public class _listeInfo
+    {
+        public string OrdreID { get; set; }
+        public string Deadline { get; set; }
+        public string Antal { get; set; }
+        public string Kunde { get; set; }
+        public string Produkttype { get; set; }
         
     }
+    
 }
