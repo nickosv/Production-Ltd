@@ -45,6 +45,13 @@ namespace Production_Ltd
             }            
         }
 
+        private void kundenNavn_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        
+
         
     }
 }

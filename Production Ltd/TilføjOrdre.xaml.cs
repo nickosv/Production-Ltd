@@ -92,7 +92,14 @@ namespace Production_Ltd
                                         vælgStandard.Text,
                                         Convert.ToDateTime(leveringsDato.Text),
                                         vælgKunde.Text);
+                MessageBox.Show("Ordre tilføjet");
                 Close();
+            }
+
+            private void udregn_Click(object sender, RoutedEventArgs e)
+            {
+                Controller controller = new Controller();
+                controller.regneMetode(vælgStandard.SelectedItem.ToString(), int.Parse(antal.Text));
             }
     }
 }
