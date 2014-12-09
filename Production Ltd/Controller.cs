@@ -57,6 +57,7 @@ namespace Production_Ltd
         }
         public void TilføjOrdre(int inputAntal, string inputProdukttype, DateTime inputLeveringsdato, string inputKunde)
         {
+            
             TilføjOrdre tilføjordre = new TilføjOrdre();
 
             SqlConnection SqlConnection = new SqlConnection(
