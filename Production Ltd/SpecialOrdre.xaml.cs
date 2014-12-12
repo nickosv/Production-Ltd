@@ -88,7 +88,9 @@ namespace Production_Ltd
         {
             Controller controller = new Controller();
 
-            controller.TilføjSpecialOrdre(vælgKunde.Text,
+            try
+            {
+                controller.TilføjSpecialOrdre(vælgKunde.Text,
                                             int.Parse(antal.Text),
                                             Convert.ToDateTime(leveringsDato.Text),
                                             stansemaskine.IsChecked.Value,
@@ -98,7 +100,14 @@ namespace Production_Ltd
                                             laserCutter.IsChecked.Value,
                                             cncFræser.IsChecked.Value,
                                             maskinsaks.IsChecked.Value);
-            MessageBox.Show("Ordre tilføjet");
+
+                MessageBox.Show("Ordre tilføjet");
+            }
+            catch (Exception d)
+            {
+                MessageBox.Show(d.Message);
+            }
+            
             Close();
         }
 
