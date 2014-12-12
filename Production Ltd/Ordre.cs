@@ -8,13 +8,13 @@ namespace Production_Ltd
 {
     class Ordre
     {
-        public Ordre(string InOrdreID, string inAntal, string inProdukttype, string inDeadline, string inKunde)
+        public Ordre(string inOrdreID, string inAntal, string inProdukttype, string inDeadline, string inKunde)
         {
-            InOrdreID = OrdreID;
-            inAntal = Antal;
-            inProdukttype = Produkttype;
-            inDeadline = Deadline;
-            inKunde = Kunde;
+            OrdreID = inOrdreID;
+            Antal = inAntal;
+            Produkttype = inProdukttype;
+            Deadline = inDeadline;
+            Kunde = inKunde;
         }
 
         public string OrdreID { get; set; }

@@ -18,6 +18,8 @@ namespace Production_Ltd
 {
     class Controller
     {
+        
+        public List<Ordre> returnlistOrdreID = new List<Ordre>();
         public void TilføjKunde(string inputNavn, string inputAdresse, int inputTelefonnummer, string inputKundeType)
         {
             TilføjKunde tilføjkunde = new TilføjKunde();
@@ -482,25 +484,42 @@ namespace Production_Ltd
 
             MessageBox.Show("Estimeret tid: " + returnTid / 60 + " timer");         
         }
-        public string HentOrdreID()
+        public List<Ordre> hentOrdreID()
         {
-            return "testordreid";
-        }
-        public string HentDeadline()
-        {
-            return "testdeadline";
-        }
-        public string HentAntal()
-        {
-            return "testantal";
-        }
-        public string HentKunde()
-        {
-            return "testkunde";
-        }
-        public string HentProdukttype()
-        {
-            return "testprodukttype";
+
+            SqlConnection SqlConnection = new SqlConnection(
+                "Server=ealdb1.eal.local;" +
+                "Database=EJL06_DB;" +
+                "User Id=ejl06_usr;" +
+                "Password=Baz1nga6;");
+
+            try
+            {
+                SqlConnection.Open();
+
+                SqlCommand cmd = new SqlCommand("findOrdre", SqlConnection);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader sdr = cmd.ExecuteReader();
+
+                while (sdr.Read())
+                {
+                    Ordre OrdreInfo = new Ordre(Convert.ToString(sdr["Ordrenummer"]), Convert.ToString(sdr["Antal"]), Convert.ToString(sdr["Produkttype"]), Convert.ToString(sdr["Leveringsdato"]), Convert.ToString(sdr["Kunde"]));
+                    returnlistOrdreID.Add(OrdreInfo);
+                }
+            }
+            catch (SqlException)
+            {
+
+            }
+            finally
+            {
+                SqlConnection.Close();
+                SqlConnection.Dispose();
+            }
+
+            return returnlistOrdreID;
+
         }
     }
 }

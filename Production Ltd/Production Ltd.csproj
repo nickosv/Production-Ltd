@@ -57,6 +57,7 @@
     <Compile Include="GenererArbplan.xaml.cs">
       <DependentUpon>GenererArbplan.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Ordre.cs" />
     <Compile Include="SpecialOrdre.xaml.cs">
       <DependentUpon>SpecialOrdre.xaml</DependentUpon>
     </Compile>

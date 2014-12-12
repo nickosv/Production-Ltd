@@ -1,20 +1,28 @@
-﻿<Window x:Class="Production_Ltd.GenererArbplan"
+﻿<Window
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="Production_Ltd.GenererArbplan"
     DataContext="{Binding RelativeSource={RelativeSource Self}}"
-    Title="Some Game Data" Height="216" Width="435">
-    <StackPanel>
+    Title="Generer Arbejdsplan" Height="350" Width="869">
+
+    <StackPanel Margin="0,0,83,0">
         <ListView ItemsSource="{Binding listeInfo}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Width="140" Header="Ordre ID" DisplayMemberBinding="{Binding OrdreID}"  />
-                    <GridViewColumn Width="140" Header="Deadline"  DisplayMemberBinding="{Binding Deadline}" />
-                    <GridViewColumn Width="140" Header="Antal" DisplayMemberBinding="{Binding Antal}" />
-                    <GridViewColumn Width="140" Header="Kunde" DisplayMemberBinding="{Binding Kunde}" />
-                    <GridViewColumn Width="140" Header="Produkttype" DisplayMemberBinding="{Binding Produkttype}" />
+                    <GridViewColumn>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Tilføj til Arbejdsplan" Margin="0" VerticalAlignment="Center" Click="Button_Click" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="50" Header="Ordre ID" DisplayMemberBinding="{Binding OrdreID}"  />
+                    <GridViewColumn Width="140" Header="Deadline" DisplayMemberBinding="{Binding Deadline}" />
+                    <GridViewColumn Width="40" Header="Antal" DisplayMemberBinding="{Binding Antal}" />
+                    <GridViewColumn Width="100" Header="Kunde" DisplayMemberBinding="{Binding Kunde}" />
+                    <GridViewColumn Width="100" Header="Produkttype" DisplayMemberBinding="{Binding Produkttype}" />
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button HorizontalAlignment="Right" Margin="5,5,5,5" Content="Add Row" Click="AddRow_Click" />
     </StackPanel>
 </Window>
